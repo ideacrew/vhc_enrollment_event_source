@@ -4,13 +4,11 @@ services:
   app: &app
     build:
       context: .
-      dockerfile: ./.docker/development/app/Dockerfile
-    image: ideacrew/vhc_enrollment_event_source:dev-0.1.0
+      dockerfile: ./.docker/test/app/Dockerfile
+    image: ideacrew/vhc_enrollment_event_source:test-0.1.0
     volumes:
       - .:/app:cached
       - rails_cache:/app/tmp/cache
-      - bundle:/bundle
-      - node_modules_app:/app/node_modules
       - packs:/app/public/packs
     tmpfs:
       - /tmp
@@ -23,7 +21,7 @@ services:
       - EDITOR=vi
     stdin_open: true
     tty: true
-    command: bash -c "rm -f tmp/pids/server.pid && bundle && yarn install --check-files && bundle exec puma -C config/puma.rb"
+    command: bash -c "./test_reports/script/docs.sh"
     ports:
       - '3000:3000'
     depends_on:
@@ -39,8 +37,6 @@ services:
 
 volumes:
   bundle:
-  node_modules_web:
-  node_modules_app:
   rails_cache:
   packs:
   mongodb:
@@ -55,4 +51,3 @@ secrets:
     file: ../certs/fullchain.pem
   ssl_key:
     file: ../certs/privkey.pem
-
