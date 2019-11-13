@@ -1,4 +1,4 @@
-FROM treyedocker/ubuntu_node_12_ruby_2_6_3:latest
+FROM treyedocker/ubuntu_node_12_ruby_2_6_3_chromedriver:latest
 
 # Configure bundler and PATH
 ENV LANG=C.UTF-8 \
@@ -22,6 +22,7 @@ ENV RAILS_ENV='development'
 ENV NODE_ENV='development'
 
 # Adding gems
+COPY ./.docker/test/app/mongoid.yml config/mongoid.yml
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 COPY package.json package.json

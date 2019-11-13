@@ -33,6 +33,13 @@ tags
 /pkg/
 /spec/reports/
 /tmp/
+test_reports/cucumber_formatter/node_modules
+test_reports/cucumber_formatter/cucumber_results/cucumber.html
+test_reports/cucumber_formatter/cucumber_results/cucumber.json
+test_reports/cucumber_formatter/junit/*.xml
+test_reports/junit_formatter/node_modules
+test_reports/junit_formatter/rspec_results/index.html
+test_reports/junit_formatter/rspec_results/rspec.xml
 
 # rspec failure tracking
 .rspec_status

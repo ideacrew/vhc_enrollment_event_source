@@ -26,3 +26,14 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+.yardoc
+doc
+/test_reports/junit_formatter/node_modules
+test_reports/junit_formatter/package-lock.json
+rubocop
+test_reports/junit_formatter/rspec_results
+coverage
+test_reports/cucumber_formatter/node_modules
+test_reports/cucumber_formatter/package-lock.json
+test_reports/cucumber_formatter/cucumber_results
+test_reports/cucumber_formatter/junit
